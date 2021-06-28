@@ -34,10 +34,11 @@ namespace ifttthandler
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ifttthandler", Version = "v1" });
             });
-            services.Configure<RabbitMqOptions>(opts => Configuration.GetSection("MqOptions").Bind(opts));
+            services.Configure<RabbitMqOptions>(opts => Configuration.GetSection("RabbitMqOptions").Bind(opts));
             services.AddSingleton<IConnectionFactory, ConnectionFactory>(provider => 
             {
                 var opts = provider.GetRequiredService<IOptions<RabbitMqOptions>>();
+
                 return new ConnectionFactory 
                 { 
                     HostName = opts.Value.HostName,

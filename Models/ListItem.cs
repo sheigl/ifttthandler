@@ -7,9 +7,7 @@ namespace ifttthandler.Models
     {
         public string Item { get; set; }
         public Action? Action { get; set; }
-        public string CreatedDate { get; set; }
-        public string UpdatedDate { get; set; }
-        public string DeletedDate { get; set; }
+        public string ActionDate { get; set; }
         public string ApiKey { get; set; }
 
         public override string ToString()

@@ -94,7 +94,6 @@ namespace ifttthandler.Controllers
             var apiKey = appSettings["ApiKey"] ?? throw new InvalidOperationException("ApiKey was not found in configuration");
             if (item.ApiKey != apiKey)
             {
-                _logger.LogError($"ItemKey: {item.ApiKey}\nApiKey: {apiKey}");
                 return false;
             }
 

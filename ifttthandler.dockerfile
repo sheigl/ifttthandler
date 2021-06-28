@@ -16,8 +16,8 @@ WORKDIR /app
 
 COPY --from=build /dist ./
 
-ENV RabbitMqOptions_HostName="ifttt_mq"
-ENV RabbitMqOptions_UserName="mqadmin"
-ENV RabbitMqOptions_VirtualHost="ifttt"
+ENV RabbitMqOptions__HostName="ifttt_mq"
+ENV RabbitMqOptions__UserName="mqadmin"
+ENV RabbitMqOptions__VirtualHost="ifttt"
 
 CMD [ "dotnet", "ifttthandler.dll" ]
